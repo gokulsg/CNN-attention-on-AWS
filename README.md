@@ -7,6 +7,19 @@ This repo will adress the following aspects of using AWS for training deep learn
 
 
 ## AWS
+
+### EC2
+
+AWS EC2 provides preconfigured machine images called DLAMI, which are servers hosted by Amazon that are specially dedicated to Deep Learning tasks. Setting up an AWS EC2 instance is a rather standard procedure. In fact, Amazon has a sweet step by step [guide](https://aws.amazon.com/getting-started/tutorials/get-started-dlami/) to set it up, we are here to use [fast.ai's tutorial](https://course.fast.ai/start_aws.html) which draw heavily from the prvious one. The basic steps are follows:
+
+**Table of contents**
+* **Pricing**
+* **Step 1: Sign in or sign up**
+* **Step 2: Request service limit**
+* **Step 3: Create an ssh key and upload it to AWS**
+* **Step 4: Launch an instance**
+* **Step 5: Connect to your instance**
+
 Here I use xx.xxx.xxx.xxx to represent the IPv4 Public IP of the EC2 instance.
 
 ssh -i .ssh/id_rsa -L localhost:8888:localhost:8888 ubuntu@xx.xxx.xxx.xxx
