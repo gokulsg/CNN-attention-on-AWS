@@ -1,4 +1,4 @@
-# demo for how to use it
+# Demo for how to use it
 
 ## Import 
 
