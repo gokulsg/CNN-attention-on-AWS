@@ -1,6 +1,6 @@
 #created by xiaoya @ tokyo July 12th 2019
-from src.const import base_path
-from scripts.data_cleaning import merge_onehotvector_columns as merge_data
+
+from data_cleaning import merge_onehotvector_columns as merge_data
 
 '''
 merge_data instance take 3 arguments
@@ -12,6 +12,6 @@ merge_column_file:the txt file that provide infomation for duplicated columns
 
 merge_data have merge_column function, it take one file as argument, it will document all the process info in the record_file
 '''
-merge_instance=merge_data(attr_min_num=1,info_file=base_path+'orginal_csvinfo/info.csv',merge_column_file=base_path+'preprocess/duplicated_attributes.txt')
+merge_instance=merge_data(attr_min_num=1,info_file='info.csv',merge_column_file='duplicated_attributes.txt')
 merge_instance.merge_columns()
 
