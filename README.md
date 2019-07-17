@@ -12,12 +12,11 @@ This repo will adress the following aspects of using AWS for training deep learn
 
 AWS EC2 provides preconfigured machine images called DLAMI, which are servers hosted by Amazon that are specially dedicated to Deep Learning tasks. Setting up an AWS EC2 instance is a rather standard procedure. In fact, Amazon has a sweet step by step [guide](https://aws.amazon.com/getting-started/tutorials/get-started-dlami/) to set it up, we are here to use [fast.ai's tutorial](https://course.fast.ai/start_aws.html) which draw heavily from the prvious one. The basic steps are follows:
 
-**Table of contents**
-* **Pricing**
 * **Step 1: Sign in or sign up**
 * **Step 2: Request service limit**
-* **Step 3: Create an ssh key and upload it to AWS**
-* **Step 4: Launch an instance**
+* **Step 3: Create an ssh key and upload it to AWS (you will need to set up a terminal for this process if you use windows, which is all described in this [separate tutorial](https://course.fast.ai/terminal_tutorial.html))**
+
+* **Step 4: Launch an instance(we will launch the Deep Learning AMI (Ubuntu) instance)**
 * **Step 5: Connect to your instance**
 
 Here I use xx.xxx.xxx.xxx to represent the IPv4 Public IP of the EC2 instance.
@@ -25,40 +24,7 @@ Here I use xx.xxx.xxx.xxx to represent the IPv4 Public IP of the EC2 instance.
 ssh -i .ssh/id_rsa -L localhost:8888:localhost:8888 ubuntu@xx.xxx.xxx.xxx
 
 
-### cuda install method on uboutu [setup](https://github.com/kevinzakka/blog-code/blob/master/aws-pytorch/install.sh):
-  dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
- 
-  sudo apt-get update
-  
-  sudo apt-get -y install cuda-drivers
-  
-  sudo dpkg --force-all -P libopencl1
-  
-  sudo apt-get install aptitude
-  
-  sudo aptitude install cuda
-  
-  sudo apt-get install cuda-runtime-7-0
-  
-  sudo yum erase nvidia cuda
-  
-  exit
-  
-  aws s3 cp --recursive s3://ec2-linux-nvidia-drivers/latest/ .
-  
-  hwinfo --gfxcard --short
-  
-  apt install hwinfo
-  
-  hwinfo --gfxcard --short
-  
-  apt search nvidia-driver
-  
-  sudo apt install nvidia-driver-390
-  
-  sudo reboot
-  
-  nvidia-smi
+### cuda install method on ubuntu [setup](https://github.com/kevinzakka/blog-code/blob/master/aws-pytorch/install.sh)
 
 
 ### file transfer to your EC2 instance:
@@ -93,9 +59,9 @@ Here's a very useful tutorial for this command line on [youtube](https://www.you
 I will also document in here some extremely useful expressions which i read on this [post](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/).(the author's writing is really delightful).
 
 ## load GPU-trained model on local machine
-I believe the workflow for this specific example will provide a standard practice for loading trained model and put it into use on your local machine.
+The workflow for this specific example will provide a standard practice for loading trained model and put it into use on your local machine. the code is in file Model-Implementation.
 
-Compare to the source code in [fdjingyuan's](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018) github, the /src/network.py is modified to only keep forward method in the network class, the batch size will be changed to one. To skip the process for configure  /src/const.py with /src/conf/whole.py, I copy everthing in whole.py to const.py, ( more modification...) 
+Compare to the source code in [fdjingyuan's](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018) github, the /src/network.py is modified to only keep forward method in the network class, the batch size will be changed to one. To skip the process for configure  /src/const.py with /src/conf/whole.py, I copy everthing in whole.py to const.py.
 
 
 ### Some interpretation and our result
