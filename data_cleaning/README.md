@@ -10,4 +10,6 @@ such as : stripe, stripes, striped are listed as separate attributes.
 
 python3 clean_exe.py 
 
+**The new csv file will be generated in the same directory.**
+
 The detailed explaination are provided within the code.
