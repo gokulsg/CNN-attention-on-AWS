@@ -63,6 +63,8 @@ The workflow for this specific example will provide a standard practice for load
 
 Compare to the source code in [fdjingyuan's](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018) github, the /src/network.py is modified to only keep forward method in the network class, the batch size will be changed to one. To skip the process for configure  /src/const.py with /src/conf/whole.py, I copy everthing in whole.py to const.py.
 
+The demostration for using the classification model is in the readme.md inside Model-Implementation file.
+
 
 ### Some interpretation and our result
 http://www.jussihuotari.com/2018/01/17/why-loss-and-accuracy-metrics-conflict/
