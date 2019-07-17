@@ -13,7 +13,7 @@ import os
 import torch
 
 class Label_Fashion_Image:
-    def __init__(self,path='/Users/zhang.xiaoya/Downloads/whole.pkl'):
+    def __init__(self,path='../model/whole.pkl'):
         self.path=path
         m=torch.load(self.path,map_location='cpu')
         self.model = WholeNetwork()
@@ -22,7 +22,7 @@ class Label_Fashion_Image:
         self.attr_catagory={'Texture':1,'Fabric':2,'Shape':3,'Part':4,'Style':5}
         #self.attr_dataframe=get_attribute()
         #def get_attribute(self):
-        with open('/Users/zhang.xiaoya/Desktop/datasets/benchmark1/Anno/list_attr_cloth.txt') as f:
+        with open('../benchmark1/Anno/list_attr_cloth.txt') as f:
             ret = []
             f.readline()
             f.readline()
@@ -61,7 +61,7 @@ class Label_Fashion_Image:
         pred_attr = [x[0, 1, :] for x in pred_attr]
         pred_cata = pred['category_output']
         # get index for category
-        category_type = pd.read_csv('/Users/zhang.xiaoya/Desktop/datasets/benchmark1/Anno/list_category_cloth.txt', skiprows=1, sep='\s+')
+        category_type = pd.read_csv('../benchmark1/Anno/list_category_cloth.txt', skiprows=1, sep='\s+')
         category_name=list(category_type['category_name'])
         pred_cata=pred['category_output']
         cata_pred= pred_cata.sort(descending=True)[0].cpu().detach().numpy()[0][:5]
