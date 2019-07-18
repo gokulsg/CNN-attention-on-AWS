@@ -3,7 +3,7 @@
 
 ### EC2
 
-AWS EC2 provides preconfigured machine images called DLAMI, which are servers hosted by Amazon that are specially dedicated to Deep Learning tasks. Setting up an AWS EC2 instance is a rather standard procedure. In fact, Amazon has a sweet step by step [guide](https://aws.amazon.com/getting-started/tutorials/get-started-dlami/) to set it up, we are here to use [fast.ai's tutorial](https://course.fast.ai/start_aws.html) which draw heavily from the prvious one. The basic steps are follows:
+Setting up an AWS EC2 instance is a rather standard procedure. In fact, Amazon has a sweet step by step [guide](https://aws.amazon.com/getting-started/tutorials/get-started-dlami/) to set it up, we are here to use [fast.ai's tutorial](https://course.fast.ai/start_aws.html) which draw heavily from the prvious one. The basic steps are follows:
 
 * **Step 1: Sign in or sign up**
 * **Step 2: Request service limit**
@@ -27,7 +27,7 @@ scp -i .ssh/id_rsa -r /mnt/c/Users/zhang.xiaoya/mydata.csv ubuntu@xx.xxx.xxx.xxx
 This works for individual file very efficiently. 
 
 ### Why S3? 
-*The following are cite from this [post](https://www.cloudberrylab.com/resources/blog/amazon-ec2-vs-amazon-s3/)
+*The following are cite from this [post](https://www.cloudberrylab.com/resources/blog/amazon-ec2-vs-amazon-s3/):**
 
 EC2 and S3 are closely related services. If you use one, there is a good chance you will use the other. That is particularly true for the following reasons:
 
@@ -38,6 +38,7 @@ S3 buckets can be used as a storage location for backing up data from inside EC2
 Because the same S3 storage bucket can be accessed by multiple EC2 instances, as well as various other types services on the AWS cloud, S3 is a useful solution for sharing data between EC2 instances and beyond. (Indeed, you could even access S3 storage from applications that you host on-premise, so it’s a handy way of sharing data between the cloud and your local infrastructure.)
 
 We can conclude that S3 is best for hosting our near 3GB image dataset. 
+
 **To mount our S3 bucket on the EC2 Linux Instance we had created prviously, this [post](https://cloudkul.com/blog/mounting-s3-bucket-linux-ec2-instance/) gives the most through explaination.**
 
 Use the cmd line to link EC2 to S3:
