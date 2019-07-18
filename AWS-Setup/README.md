@@ -27,7 +27,7 @@ scp -i .ssh/id_rsa -r /mnt/c/Users/zhang.xiaoya/mydata.csv ubuntu@xx.xxx.xxx.xxx
 This works for individual file very efficiently. 
 
 ### Why S3? 
-*The following are cite from this [post](https://www.cloudberrylab.com/resources/blog/amazon-ec2-vs-amazon-s3/):**
+**The following are cite from this [post](https://www.cloudberrylab.com/resources/blog/amazon-ec2-vs-amazon-s3/):**
 
 EC2 and S3 are closely related services. If you use one, there is a good chance you will use the other. That is particularly true for the following reasons:
 
@@ -47,10 +47,37 @@ s3fs s3name -o use_cache=/tmp -o allow_other -o uid=1001 -o mp_umask=002 -o mult
 
 
 ## TMUX 
-So basically, tmux is all for keeping your model training on the background even your current session disconnected from your EC2. 
+tmux stands for terminal multiplexer. So basically, tmux is all for keeping your model training on the background even your current session disconnected from your EC2. 
 
 Here's a very useful tutorial for this command line on [youtube](https://www.youtube.com/watch?v=BHhA_ZKjyxo). 
-I will also document in here some extremely useful expressions which i read on this [post](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/).(the author's writing is really delightful).
+I will also document in here some extremely useful command line expressions which I read on this [post](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/).(the author's writing is really delightful).
+
+All commands in tmux are triggered by a prefix key followed by a command key. By default, tmux uses C-b as prefix key. This notation might read a little weird if you’re not used to it. In this emacs notation C- means “press and hold the Ctrl key”3. Thus C-b simply means press and hold the Ctrl key and press b keys at the same time.
+
+**Figure out which sessions are running by using**
+
+tmux ls
+
+**create new session**
+
+tmux new -s sessionname
+
+**To detach your current session use(the current session will run on the background)**
+
+C-b d 
+
+
+**To connect to that session running in the background:**
+
+tmux attach -t sessionname
+
+**To shut down a session**
+
+exit
+
+
+
+
 
 
 ### Some interpretation and our result
