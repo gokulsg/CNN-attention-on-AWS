@@ -8,7 +8,6 @@ This repo will adress the following aspects of using AWS for training deep learn
 
 
 ## Data preprocessing for duplicated attributes.
-**The code and text in this file are for the data cleaning purpose.**
 
 After following the [post](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018/)'s creating info.csv step, 
 it is necessary to do some data cleaning since the original DeepFashion Dataset has a lot duplicated labels, 
