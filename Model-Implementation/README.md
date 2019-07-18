@@ -5,7 +5,10 @@ This file is dedicated for implementing the [Deep Fashion Analysis with Feature 
 
 ### 1. Import 
 
-from model_loading import Label_Fashion_Image
+import pandas as pd
+
+
+from Model_loading import Label_Fashion_Image
 
 ### 2. Suppose all the image you want do classfication are in the following directory:
 
