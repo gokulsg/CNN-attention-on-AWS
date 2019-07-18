@@ -1,5 +1,5 @@
 
-## General setup for AWS EC2 (Elastic Compute Cloud) and S3 Storage Classes for Pytorch
+## General setup for AWS EC2 (Elastic Compute Cloud) and S3 Storage Classes for training deep-learning model with Pytorch
 
 ### EC2
 
