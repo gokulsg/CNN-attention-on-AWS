@@ -7,6 +7,9 @@ This repo will adress the following aspects of using AWS for training deep learn
 * Load the GPU-trained model and run on local machine.
 
 
+## General setup for AWS EC2 (Elastic Compute Cloud) and S3 Storage Bucket.
+
+
 ## Data preprocessing for duplicated attributes.
 
 After following the [post](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018/)'s creating info.csv step, 
