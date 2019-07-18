@@ -1,8 +1,8 @@
 # Setup AWS for training deep learning model using pytorch
 This repo will adress the following aspects of using AWS for training deep learning models 
 * **General setup for AWS EC2 (Elastic Compute Cloud) and S3 Storage Classes for Pytorch**
-* * **The [code](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018) and [dataset](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html) for paper [Deep Fashion Analysis with Feature Map Upsampling and Landmark-driven Attention (2018)](https://drive.google.com/file/d/1Dyj0JIziIrTRWMWDfPOapksnJM5iPzEi/view) is taken as example to show the workflow** 
-* * Manage the remote terminal sessions with tmux.
+  * **The [code](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018) and [dataset](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html) for paper [Deep Fashion Analysis with Feature Map Upsampling and Landmark-driven Attention (2018)](https://drive.google.com/file/d/1Dyj0JIziIrTRWMWDfPOapksnJM5iPzEi/view) is taken as example to show the workflow** 
+  * Manage the remote terminal sessions with tmux.
 * Data preprocessing for duplicated attributes.
 * Load the GPU-trained model and run on local machine.
 
