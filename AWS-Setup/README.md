@@ -21,8 +21,11 @@ ssh -i .ssh/id_rsa -L localhost:8888:localhost:8888 ubuntu@xx.xxx.xxx.xxx
 
 
 ### file transfer to your EC2 instance:
+```
 
 scp -i .ssh/id_rsa -r /mnt/c/Users/zhang.xiaoya/mydata.csv ubuntu@xx.xxx.xxx.xxx:~/.
+```
+
 
 This works for individual file very efficiently. 
 
@@ -43,7 +46,12 @@ We can conclude that S3 is best for hosting our near 3GB image dataset.
 
 Use the cmd line to link EC2 to S3:
 
+```
 s3fs s3name -o use_cache=/tmp -o allow_other -o uid=1001 -o mp_umask=002 -o multireq_max=5 /mys3bucket
+
+```
+
+
 
 
 ## TMUX 
@@ -55,25 +63,30 @@ I will also document in here some extremely useful command line expressions whic
 All commands in tmux are triggered by a prefix key followed by a command key. By default, tmux uses C-b as prefix key. This notation might read a little weird if you’re not used to it. In this emacs notation C- means “press and hold the Ctrl key”3. Thus C-b simply means press and hold the Ctrl key and press b keys at the same time.
 
 **Figure out which sessions are running by using**
-
+```
 tmux ls
-
+```
 **create new session**
-
+```
 tmux new -s sessionname
+```
 
 **To detach your current session use(the current session will run on the background)**
-
+```
 C-b d 
+```
 
 
 **To connect to that session running in the background:**
-
+```
 tmux attach -t sessionname
+```
 
 **To shut down a session**
 
+```
 exit
+```
 
 
 
@@ -89,21 +102,29 @@ http://www.jussihuotari.com/2018/01/17/why-loss-and-accuracy-metrics-conflict/
 ### some useful cmd lines:
 
 **1. For Counting Files in the Current Directory:**
+```
 
 ls -1 | wc -l
+```
 
 **2. For [Decompressing multiple files at once](https://askubuntu.com/questions/431478/decompressing-multiple-files-at-once):**
 
 If you really want to uncompress them in parallel, you could do:
+```
 
 for i in *zip; do unzip "$i" & done
+```
 
 That however, will launch N processes for N .zip files and could be very heavy on your system. For a more controlled approach, launching only 10 parallel processes at a time, try this:
+```
 
 find . -name '*.zip' -print0 | xargs -0 -I {} -P 10 unzip {}
+```
 
 To control the number of parallel processes launched, change -P to whatever you want. If you don't want recurse into subdirectories, do this instead:
+```
 
 find . -maxdepth 1 -name '*.zip' -print0 | xargs -0 -I {} -P 10 unzip {}
+```
 
 
