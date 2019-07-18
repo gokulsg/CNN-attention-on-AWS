@@ -1,6 +1,8 @@
 
 This file is dedicated for implementing the [Deep Fashion Analysis with Feature Map Upsampling and Landmark-driven Attention](https://drive.google.com/file/d/1Dyj0JIziIrTRWMWDfPOapksnJM5iPzEi/view)model in a non-GPU machine.
 
+Compare to the source code in [fdjingyuan's](https://github.com/fdjingyuan/Deep-Fashion-Analysis-ECCV2018) github, the /src/network.py is modified to only keep forward method in the network class, the batch size will be changed to one. To skip the process for configure  /src/const.py with /src/conf/whole.py, I copied everthing in /src/conf/whole.py to /src/const.py.
+
 ## Demo for how to use it
 
 ### 1. Import 
